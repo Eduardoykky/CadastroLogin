@@ -14,3 +14,14 @@ function QualDeseja(){
     return opcao
 }
 
+function Login(nome, senha) {
+    for (var index2 = 0; index2 < nomes.length; index2++) {
+        if (nome == nomes[index2]) {
+            if (senha == senhas[index2]) {
+                return true
+            }
+        }
+    } 
+    return false   
+}
+
