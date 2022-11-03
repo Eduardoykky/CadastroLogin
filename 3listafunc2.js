@@ -8,3 +8,9 @@ function CadastrarUsuario(){
     senhas[index] = prompt("Insira sua senha")
     index++
 }
+
+function QualDeseja(){
+    var opcao = prompt("1 Para Cadastrar; 2 Para login; 3 Para excluir cadastro; 4 Para encerrar.")
+    return opcao
+}
+
