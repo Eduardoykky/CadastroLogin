@@ -12,7 +12,7 @@ function CadastrarUsuario(){
 }
 
 function QualDeseja(){
-    var opcao = prompt("1 Para Cadastrar; 2 Para login; 3 Para excluir cadastro; 4 Para encerrar.")
+    var opcao = parseInt(prompt("1 Para Cadastrar; 2 Para login; 3 Para excluir cadastro; 4 Para encerrar."))
     return opcao
 }
 
@@ -47,3 +47,36 @@ function ExcluirContas(nome) {
     senhas = senhasSup
 }
 
+var continuar = true
+while(continuar){
+    var opcao = QualDeseja()
+
+    if (opcao == 1) {
+        CadastrarUsuario()
+        console.log("Cadastro realizado com sucesso!")
+    }else if (opcao == 2) {
+        var nome = prompt("Insira um nome para fazer o login")
+        var senha = prompt("Insira uma senha para login")
+        var login = Login(nome, senha)
+        if (login == true) {
+            console.log("Login feito com sucesso")
+        }else{
+            console.log("Usuario ou Senha incorreto.")
+        }
+    }else if (opcao == 3) {
+        var nome = prompt("Insira o nome de cadastro para excluir.")
+        ExcluirContas(nome)
+        console.log("Cadastro exluido com sucesso.")
+    }else{
+        console.log("O programa será encerrado.")
+        continuar == false
+    }
+    if (continuar = true) {
+        var opContinuar = prompt("Deseja continuar? s ou n")
+        if(opContinuar == "s"){
+            continuar = true
+        }else{
+            continuar = false
+        }
+    }
+}
